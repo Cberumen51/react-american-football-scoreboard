@@ -8,9 +8,24 @@ function App() {
   const [homeStart, homeScore] = useState (0);  
   const [awayStart, awayScore] = useState (0);
 
-  const homeTouchdown = (e) => {
-     homeScore(homeStart + 7)
+  const homeTwoPointer = (e) => {
+     homeScore(homeStart + 2)
   }
+  const homeThreePointer = (e) => {
+    homeScore(homeStart + 3)
+ }
+ const homeFreeThrow = (e) => {
+   homeScore(homeStart + 1)
+ }
+ const awayTwoPointer = (e) => {
+  awayScore(awayStart + 2)
+}
+const awayThreePointer = (e) => {
+  awayScore(awayStart + 3)
+}
+const awayFreeThrow = (e) => {
+  awayScore(awayStart + 1)
+}
   const awayTouchdown = (e) => {
     awayScore(awayStart + 7) 
   }
@@ -25,7 +40,7 @@ function App() {
       <section className="scoreboard">
         <div className="topRow">
           <div className="home">
-            <h2 className="home__name">Lions</h2>
+            <h2 className="home__name">Lakers</h2>
 
             {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
@@ -33,7 +48,7 @@ function App() {
           </div>
           <div className="timer">00:03</div>
           <div className="away">
-            <h2 className="away__name">Tigers</h2>
+            <h2 className="away__name">Celtics</h2>
             <div className="away__score">{awayStart}</div>
           </div>
         </div>
@@ -42,12 +57,14 @@ function App() {
       <section className="buttons">
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button className="homeButtons__touchdown" onClick={homeTouchdown}>Home Touchdown</button>
-          <button className="homeButtons__fieldGoal" onClick={homeFieldGoal}>Home Field Goal</button>
+          <button className="homeButtons__twoPointer" onClick={homeTwoPointer}>Home Two Pointer</button>
+          <button className="homeButtons__threepointer" onClick={homeThreePointer}>Home Three Pointer</button>
+          <button className="homeButtons__Freethrow" onClick={homeFreeThrow}>Home Free Throw</button>
         </div>
         <div className="awayButtons">
-          <button className="awayButtons__touchdown" onClick={awayTouchdown}>Away Touchdown</button>
-          <button className="awayButtons__fieldGoal" onClick={awayFieldGoal}>Away Field Goal</button>
+          <button className="awayButtons__twoPointer" onClick={awayTwoPointer}>Away Two Pointer</button>
+          <button className="awayButtons__threePointer" onClick={awayThreePointer}>Away Three Pointer</button>
+          <button className="homeButtons__freeThrow" onClick={awayFreeThrow}>Away Free Throw </button>
         </div>
       </section>
     </div>

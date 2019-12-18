@@ -34,11 +34,13 @@
 }
 
 .home {
-  background-color: #656565;
+  background:linear-gradient(28deg,gold 69%, purple 50%);
+  color: black;
 }
 
 .away {
-  background-color: #af750a;
+  background:linear-gradient( 28deg,green 69%, white 50%);
+  color: black;
 }
 
 .home__name,
